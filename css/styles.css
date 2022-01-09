@@ -64,6 +64,7 @@ li {
   background-image: url("/img/header-bg.svg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: var(--primary-color);
 }
 /* Main Content */
 .main-content {
@@ -153,6 +154,9 @@ li {
   text-decoration: none;
   color: var(--secondary-color);
 }
+.job-name-link:hover {
+  opacity: 0.8;
+}
 .job-type-place {
   display: flex;
   align-items: center;
@@ -164,14 +168,34 @@ li {
 }
 .announcement-date {
   margin: 0;
-  margin-right: 36px;
+  margin-right: 16px;
 }
 .job-type {
   margin: 0;
-  margin-right: 36px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
 }
 .job-place {
   margin: 0;
+}
+.job-type::before {
+  content: " ";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  display: flex;
+  background-color:#7C8F8F;
+  margin-right: 16px;
+}
+.job-type::after {
+  content: " ";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  display: flex;
+  background-color: #7C8F8F;
+  margin-left: 16px;
 }
 .right-info {
   margin-left: auto;
@@ -195,7 +219,9 @@ li {
   margin-left: 16px;
   padding: 4px 8px;
 }
-
+.required-skill-name:hover {
+  color: var(--secondary-color);
+}
 @media (max-width: 760px) {
   .job-list-item {
     flex-direction: column;
