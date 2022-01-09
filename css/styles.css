@@ -1,6 +1,7 @@
 :root {
   --primary-color: #5CA5A5;
   --secondary-color: #2B3939;
+  --main-bg: rgba(92, 165, 165, 0.1);
 }
 
 /* GENERAL */
@@ -22,8 +23,8 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Arial", sans-serif;
-  background-color: #F2F2F2;
+  font-family: 'Spartan', "Arial", sans-serif;
+  background-color: var(--main-bg);
   font-size: 14px;
   line-height: 16px;
 }
@@ -64,6 +65,7 @@ li {
   background-repeat: no-repeat;
   background-size: cover;
 }
+/* Main Content */
 .main-content {
   flex-grow: 1;
 }
@@ -71,8 +73,6 @@ li {
   padding-top: 76px;
   padding-bottom: 120px;
 
-}
-.job-lists-wrapper {
 }
 .jobs-box-list {
   display: flex;
@@ -177,6 +177,7 @@ li {
   margin-left: auto;
 }
 .job-required-skills-list {
+  padding-left: 0;
 }
 .required-skills-list-item {
   display: flex;
@@ -190,7 +191,43 @@ li {
   margin: 0;
   letter-spacing: 1px;
   color: #5CA5A5;
-  background-color: rgba(92, 165, 165, 0.1);
+  background-color: var(--main-bg);
   margin-left: 16px;
   padding: 4px 8px;
+}
+
+@media (max-width: 760px) {
+  .job-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 327px;
+    margin-bottom: 40px;
+    padding: 24px;
+    position: relative;
+  }
+  .left-info {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    padding-bottom: 16px;
+  }
+  .left-info img {
+    position: absolute;
+    top: -24px;
+    width: 48px;
+    height: 48px;
+  }
+  .job-info-text {
+    margin-top: 13px;
+  }
+  .right-info {
+    margin-top: 20px;
+  }
+  .required-skills-list-item {
+    flex-wrap: wrap;
+  }
+  .required-skill-name {
+    margin-left: 0;
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
 }
