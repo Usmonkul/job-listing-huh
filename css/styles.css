@@ -49,9 +49,9 @@ li {
 }
 /* CONTAINER */
 .container {
-  max-width: 1350px;
-  padding-left: 120px;
-  padding-right: 120px;
+  max-width: 1150px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -83,7 +83,6 @@ li {
   display: flex;
   align-items: center;
   width: 100%;
-  min-width: 1110px;
   padding: 32px 40px;
   background-color: #FFF;
   margin-bottom: 24px;
@@ -118,10 +117,9 @@ li {
   margin: 0;
   margin-right: 24px;
 }
-.job-status1 {
-  padding: 6px 8px;
+.job-status {
+  padding: 6px 8px 4px 8px;
   margin: 0;
-  background-color: var(--primary-color);
   border-radius: 12px;
   margin-right: 24px;
   color: #FFF;
@@ -131,17 +129,12 @@ li {
   letter-spacing: -0.0846154px;
   text-transform: uppercase;
 }
+.job-status1 {
+  background-color: var(--primary-color);
+  margin-right: 24px;
+}
 .job-status2 {
-  padding: 6px 8px;
-  margin: 0;
   background-color: var(--secondary-color);
-  border-radius: 12px;
-  color: #FFF;
-  font-size: 11px;
-  line-height: 12px;
-  font-weight: bold;
-  letter-spacing: -0.0846154px;
-  text-transform: uppercase;
 }
 .job-name-header {
   margin: 0;
@@ -154,8 +147,9 @@ li {
   text-decoration: none;
   color: var(--secondary-color);
 }
-.job-name-link:hover {
-  opacity: 0.8;
+.job-name-link:hover,
+.job-name-link:active {
+  color: var(--primary-color);
 }
 .job-type-place {
   display: flex;
@@ -166,29 +160,25 @@ li {
   letter-spacing: -0.115385px;
   color: #7C8F8F;
 }
+.job-type-place p:not(:last-child) {
+  margin-right: 16px;
+}
 .announcement-date {
   margin: 0;
-  margin-right: 16px;
+  display: flex;
+  align-items: center;
 }
 .job-type {
   margin: 0;
-  margin-right: 16px;
   display: flex;
   align-items: center;
 }
 .job-place {
   margin: 0;
-}
-.job-type::before {
-  content: " ";
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
   display: flex;
-  background-color:#7C8F8F;
-  margin-right: 16px;
+  align-items: center;
 }
-.job-type::after {
+.job-type-place p:not(:last-child)::after {
   content: " ";
   width: 4px;
   height: 4px;
@@ -219,10 +209,12 @@ li {
   margin-left: 16px;
   padding: 4px 8px;
 }
-.required-skill-name:hover {
-  color: var(--secondary-color);
+.required-skill-name:hover,
+.required-skill-name:active {
+  color: #FFF;
+  background-color: var(--primary-color);
 }
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .job-list-item {
     flex-direction: column;
     align-items: flex-start;
@@ -247,6 +239,8 @@ li {
   }
   .right-info {
     margin-top: 20px;
+    margin-left: 0;
+    margin-right: auto;
   }
   .required-skills-list-item {
     flex-wrap: wrap;
